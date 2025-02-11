@@ -7,17 +7,18 @@ import esprit.tn.ms2foyer.entity.Foyer;
 import esprit.tn.ms2foyer.service.IFoyerService;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
 @RestController
-@AllArgsConstructor
 @RequestMapping("/api/foyers")
+@RequiredArgsConstructor
 public class FoyerController {
 
-    private IFoyerService foyerService;
+    private final IFoyerService foyerService;
 
     // Constructor injection or field injection (if preferred as in your example)
     @PostMapping("/addFoyer")

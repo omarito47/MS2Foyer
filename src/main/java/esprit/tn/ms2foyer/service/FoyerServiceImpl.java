@@ -15,7 +15,6 @@ public class FoyerServiceImpl implements IFoyerService {
 
     private final FoyerRepository foyerRepository;
 
-    @Autowired
     public FoyerServiceImpl(FoyerRepository foyerRepository) {
         this.foyerRepository = foyerRepository;
     }
