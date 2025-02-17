@@ -9,6 +9,8 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import tn.starter.mongoShared.controllers.GenericController;
+import tn.starter.mongoShared.dto.FoyerDTO;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,26 +18,6 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/foyers")
 @RequiredArgsConstructor
-public class FoyerController {
-
-    private final IFoyerService foyerService;
-
-    // Constructor injection or field injection (if preferred as in your example)
-    @PostMapping("/addFoyer")
-    public Foyer addFoyer(@RequestBody Foyer foyer) {
-        return foyerService.addFoyer(foyer);
-    }
-
-
-
-    @GetMapping("/getFoyerById/{idFoyer}")
-    public Optional<Foyer> retrieveFoyer(@PathVariable String idFoyer) {
-        return foyerService.getFoyerById(idFoyer);
-    }
-
-    @GetMapping("/getFoyers")
-    public List<Foyer> retrieveAllFoyers() {
-        return foyerService.getAllFoyers();
-    }
+public class FoyerController extends GenericController<FoyerDTO> {
 
 }
